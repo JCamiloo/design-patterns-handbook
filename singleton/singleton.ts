@@ -1,5 +1,5 @@
 class MySingleton {
-  private static instance: Singleton;
+  private static instance: MySingleton;
   public random: number;
 
   private constructor() {
@@ -8,7 +8,7 @@ class MySingleton {
 
   static getInstance() {
     if (!this.instance) {
-      this.instance = new Singleton();
+      this.instance = new MySingleton();
     }
 
     return this.instance;
@@ -16,7 +16,7 @@ class MySingleton {
 }
 
 const mySingleton = MySingleton.getInstance();
-console.log(singleton.random);
+console.log(mySingleton.random);
 
 const mySingleton2 = MySingleton.getInstance();
-console.log(singleton2.random);
+console.log(mySingleton.random);
